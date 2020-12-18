@@ -42,7 +42,7 @@ public class LandingPage extends BasePage {
 
     public void selectLocation () {
         List<WebElement> autoSuggestions = Web.getDriver().findElements(AutoSuggestionsLoc);
-        WebElement LakeGeorgeElement = Web.getDriver().findElement(LakeGeorgeLoc);
+        WebElement LakeGeorgeElement = findElementUsingFluentWait(LakeGeorgeLoc);
         String LakeGeorgeText = LakeGeorgeElement.getText();
         for (WebElement suggestions : autoSuggestions) {
             if (suggestions.getText().equalsIgnoreCase(LakeGeorgeText)) {

@@ -27,7 +27,7 @@ public class AfterSearchPage extends BasePage {
 
 
     public boolean IsDesLMEqual (String data) {
-        WebElement DesLM = Web.getDriver().findElement(DestinationLandMark);
+        WebElement DesLM = findElementUsingFluentWait(DestinationLandMark);
         String DesLMText = DesLM.getAttribute("value");
         return  DesLMText.equalsIgnoreCase(data);
 
