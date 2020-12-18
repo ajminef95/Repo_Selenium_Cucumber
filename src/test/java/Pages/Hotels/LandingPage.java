@@ -22,7 +22,7 @@ public class LandingPage extends BasePage {
     By ChildTwoAgeLoc = By.id("qf-0q-room-0-child-1-age");
 
     public void closeOverlay () {
-        WebElement crossSign = Web.getDriver().findElement(closeOverlayLoc);
+        WebElement crossSign = findElementUsingFluentWait(closeOverlayLoc);
         crossSign.click();
 
     }
@@ -33,7 +33,7 @@ public class LandingPage extends BasePage {
 
     public void enterKeysSearchBox (String data) {
 
-        WebElement searchBoxElement = Web.getDriver().findElement(searchBox);
+        WebElement searchBoxElement = findElementUsingFluentWait(searchBox);
         searchBoxElement.clear();
         clickThis(searchBox);
         type(searchBox, data);

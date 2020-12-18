@@ -21,7 +21,6 @@ public class AfterSearchPage extends BasePage {
         return headerText.contains(data);
 
 
-
     }
 
 
@@ -38,7 +37,7 @@ public class AfterSearchPage extends BasePage {
 
 
     public void HoverToPriceMenuToggleAndClick () {
-        WebElement PriceMenu = Web.getDriver().findElement(PriceMenuToggleLoc);
+        WebElement PriceMenu = findElementUsingFluentWait(PriceMenuToggleLoc);
         Actions actII = new Actions(Web.getDriver());
         actII.moveToElement(PriceMenu).build().perform();
         clickThis(PriceLowToHigh);
@@ -48,7 +47,7 @@ public class AfterSearchPage extends BasePage {
     }
 
     public void PrintTheLowestPriceAndHotel () {
-        WebElement LowestPrice = Web.getDriver().findElement(LowestPriceLoc);
+        WebElement LowestPrice = findElementUsingFluentWait(LowestPriceLoc);
         String LowestPriceText = LowestPrice.getText();
         System.out.println("Lowest price of Hotel is: " + LowestPriceText);
         WebElement HotelName = Web.getDriver().findElement(HotelNameLoc);
@@ -58,7 +57,7 @@ public class AfterSearchPage extends BasePage {
     }
 
     public boolean isLowestPriceLessThan100 () {
-        WebElement LowestPrice1 = Web.getDriver().findElement(LowestPriceLoc);
+        WebElement LowestPrice1 = findElementUsingFluentWait(LowestPriceLoc);
         String LowestPriceText1 = LowestPrice1.getText();
 
         int LowestPriceIntTxt = Integer.parseInt(LowestPriceText1);
